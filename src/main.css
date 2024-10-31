@@ -210,6 +210,11 @@ header#nav {
 }
 .navbar-links ul {
   list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+.navbar-links li {
+  margin-right: 2rem;
 }
 
 .main-navbar {
