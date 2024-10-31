@@ -1,4 +1,9 @@
 import React from 'react'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas)
+
 import Navbar from './features/navbar/Navbar'
 import Hero from './features/section-hero/Hero'
 import Features from './features/section-features/Features'

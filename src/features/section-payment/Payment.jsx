@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 const Payment = () => {
   return (
     <section id="payment">
@@ -12,7 +14,7 @@ const Payment = () => {
             </ul>
 
             <a className="btn-learn-more btn-primary" href="#">
-              <span>Learn more<i className="fa-solid fa-arrow-right"></i></span>
+              <span>Learn more <FontAwesomeIcon icon="fa-arrow-right" /> </span>
             </a>
           </div>
 
@@ -45,7 +47,7 @@ const Payment = () => {
             </div>
 
             <a className="btn-learn-more btn-primary" href="#">
-              <span>Learn more<i className="fa-solid fa-arrow-right"></i></span>
+              <span>Learn more <FontAwesomeIcon icon="fa-arrow-right" /> </span>
             </a>
           </div>
       </div>

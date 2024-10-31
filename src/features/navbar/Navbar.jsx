@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 const Navbar = () => {
   return (
     <header id="nav">
@@ -41,8 +43,8 @@ const Navbar = () => {
           
           <div className="btn-burger">
             <label htmlFor="burger-toggle">
-              <i className="fa-solid fa-bars burger-menu-open"></i>
-              <i className="fa-solid fa-xmark burger-menu-close"></i>
+              <div className="burger-menu-open"><FontAwesomeIcon icon="fa-bars" /></div>
+              <div className="burger-menu-close"><FontAwesomeIcon icon="fa-xmark" /></div>
             </label>
           </div>
           <input type="checkbox" id="burger-toggle" className="visually-hidden" aria-label="Toggle open main menu" />
