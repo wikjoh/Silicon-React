@@ -1,0 +1,86 @@
+[data-darkmode="true"] {
+  --color-bg: var(--color-bg-dark);
+  --color-navlink: var(--color-navlink-darkbg);
+  --color-burger: var(--color-white);
+  --color-heading: var(--color-heading-darkbg);
+  --color-paragraph: var(--color-paragraph-darkbg);
+  --color-bg-dlbtn: var(--color-bg-dlbtn-darkbg);
+  --color-chevronbg: var(--color-chevronbg-darkbg);
+  --color-chevronarrow: var(--color-chevronarrow-darkbg);
+  --color-brandlogo-border: var(--color-brandlogo-border-darkbg);
+  --color-feature-cards-img-bg: var(--color-feature-cards-img-bg-bgdark);
+  --color-how-bg: var(--color-how-bg-dark);
+  --color-reviewsbg: var(--color-reviewsbg-darkbg);
+  --color-reviewbg: var(--color-reviewbg-darkbg);
+  --color-reviewrole: var(--color-reviewrole-darkbg);
+  --color-faqbg: var(--color-faqbg-darkbg-mobile);
+  --color-faqoutline: var(--color-faqoutline-darkbg);
+  --color-faqchevronbg: var(--color-faqchevronbg-darkbg);
+  --color-faqchevronarrow: var(--color-faqchevronarrow-darkbg);
+  --color-subscribebg: var(--color-subscribebg-darkbg);
+  /* Change themeswitch-bg to active color */
+  --color-switch-bg: var(--color-primary);
+
+  /* Swap to light-texted logo */
+  .logo-img {
+    content: url('/assets/images/logo-bgdark.svg');
+  }
+  section#hero {
+    background: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 50%, rgba(19,16,34,1) 100%);
+  }
+  .hero-container .pitch {
+    color: var(--color-white);
+  }
+  .review {
+    box-shadow: unset;
+  }
+  .chevron-dn-img {
+    content: url('/assets/icons/chevron-dn-dark.svg');
+  }
+  .btn-apple-img {
+    content: url('/assets/images/appstorebadges/appstore-dark.svg');
+  }
+  .btn-google-img {
+    content: url('/assets/images/appstorebadges/googleplay-dark.svg');
+  }
+  /* Set darkmode switch to active position */
+  .dmswitchbg::before {
+    transform: translateX(20px);
+  }
+}
+
+/* In width 768px+ and darkmode, remove shadow from FAQ
+**  and apply border on open details elements*/
+@media (768px <= width) {
+  .features-container .brandlogo {
+    background-color: var(--color-brandlogo-bg-darkbg-tablet);
+  }
+
+  .faq-accordion {
+    details {
+      box-shadow: none;
+      background-color: var(--color-faqbg-darkbg);
+
+      &[open] {
+        border: 1px solid #383A43;
+      }
+    }
+  }
+}
+
+@media (1400px <= width) {
+  .features-container { 
+    .brandlogo {
+      background-color: var(--color-brandlogo-bg-darkbg-desktop);
+    }
+    .card-img-container {
+      background-color: #12162A;
+    }
+  }
+
+  .subscribe input {
+    background-color: #191D27;
+    color: var(--color-paragraph-darkbg);
+    border-color: #42464D;;
+  }
+}

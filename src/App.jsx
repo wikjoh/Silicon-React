@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import { ThemeContext } from './contexts/ThemeContext'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -15,21 +16,24 @@ import Footer from './features/footer/Footer'
 
 
 
+
 function App() {
 
+  const { darkmode } = useContext(ThemeContext)
+
   return (
-    <div className="themewrapper">
-      <Navbar />
-      <main id="main-content">
-        <Hero />
-        <Features />
-        <How />
-        <Payment />
-        <Reviews />
-        <FAQContact />
-      </main>
-      <Footer />
-    </div>
+      <div className="themewrapper" data-darkmode={`${darkmode}`}>
+        <Navbar />
+        <main id="main-content">
+          <Hero />
+          <Features />
+          <How />
+          <Payment />
+          <Reviews />
+          <FAQContact />
+        </main>
+        <Footer />
+      </div>
   )
 }
 
