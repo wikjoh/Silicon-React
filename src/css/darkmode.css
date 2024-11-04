@@ -23,7 +23,7 @@
 
   /* Swap to light-texted logo */
   .logo-img {
-    content: url('/assets/images/logo-bgdark.svg');
+    content: url('/images/logo-bgdark.svg');
   }
   section#hero {
     background: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 50%, rgba(19,16,34,1) 100%);
@@ -35,13 +35,13 @@
     box-shadow: unset;
   }
   .chevron-dn-img {
-    content: url('/assets/icons/chevron-dn-dark.svg');
+    content: url('/icons/chevron-dn-dark.svg');
   }
   .btn-apple-img {
-    content: url('/assets/images/appstorebadges/appstore-dark.svg');
+    content: url('/images/appstorebadges/appstore-dark.svg');
   }
   .btn-google-img {
-    content: url('/assets/images/appstorebadges/googleplay-dark.svg');
+    content: url('/images/appstorebadges/googleplay-dark.svg');
   }
   /* Set darkmode switch to active position */
   .dmswitchbg::before {

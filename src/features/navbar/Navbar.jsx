@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="main-navbar wrapper">
         <div className="navbar-left flex">
           <a className="logo" href="/" aria-current="page">
-            <img className="logo-img" src="/images/logo-bgdark.svg" alt="Silicon Logotype" />
+            <img className="logo-img" src="/images/logo-bglight.svg" alt="Silicon Logotype" />
           </a>
           
           <nav id="navbar-links" className="navbar-links">
