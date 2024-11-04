@@ -52,35 +52,41 @@
 /* In width 768px+ and darkmode, remove shadow from FAQ
 **  and apply border on open details elements*/
 @media (768px <= width) {
-  .features-container .brandlogo {
-    background-color: var(--color-brandlogo-bg-darkbg-tablet);
-  }
+  .themewrapper[data-darkmode="true"] {
 
-  .faq-accordion {
-    details {
-      box-shadow: none;
-      background-color: var(--color-faqbg-darkbg);
-
-      &[open] {
-        border: 1px solid #383A43;
+    .features-container .brandlogo {
+      background-color: var(--color-brandlogo-bg-darkbg-tablet);
+    }
+    
+    .faq-accordion {
+      details {
+        box-shadow: none;
+        background-color: var(--color-faqbg-darkbg);
+        
+        &[open] {
+          border: 1px solid #383A43;
+        }
       }
     }
   }
 }
 
 @media (1400px <= width) {
-  .features-container { 
-    .brandlogo {
-      background-color: var(--color-brandlogo-bg-darkbg-desktop);
+  .themewrapper[data-darkmode="true"] {
+    
+    .features-container { 
+      .brandlogo {
+        background-color: var(--color-brandlogo-bg-darkbg-desktop);
+      }
+      .card-img-container {
+        background-color: #12162A;
+      }
     }
-    .card-img-container {
-      background-color: #12162A;
+    
+    .subscribe input {
+      background-color: #191D27;
+      color: var(--color-paragraph-darkbg);
+      border-color: #42464D;;
     }
-  }
-
-  .subscribe input {
-    background-color: #191D27;
-    color: var(--color-paragraph-darkbg);
-    border-color: #42464D;;
   }
 }
