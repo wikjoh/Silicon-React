@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const BurgerButton = () => {
+const BurgerButton = ({ toggleBurger }) => {
   return (
     <div className="btn-burger">
-      <label htmlFor="burger-toggle">
-      <div className="burger-menu-open"><FontAwesomeIcon icon="fa-bars" /></div>
-      <div className="burger-menu-close"><FontAwesomeIcon icon="fa-xmark" /></div>
+      <label>
+      <div onClick={toggleBurger} className="burger-menu-open"><FontAwesomeIcon icon="fa-bars" /></div>
+      <div onClick={toggleBurger} className="burger-menu-close"><FontAwesomeIcon icon="fa-xmark" /></div>
     </label>
   </div>
   )

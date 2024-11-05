@@ -1,12 +1,21 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import DarkmodeToggle from "./components/DarkmodeToggle"
 import SigninButton from "./components/SigninButton"
 import BurgerButton from "./components/BurgerButton"
 import BurgerMenu from "./components/BurgerMenu"
+import { useState } from "react"
+import './Navbar.css'
 
 const Navbar = () => {
+
+  const [burgerOpen, setBurgerOpen] = useState(false)
+
+  const toggleBurger = () => {
+    setBurgerOpen(prevState => !prevState)
+    console.log(burgerOpen)
+  }
+
   return (
-    <header id="nav">
+    <header id="nav" data-burger-open={burgerOpen}>
       <a href="#main-content" className="jump-to-main">Jump to main content</a>
       <div className="main-navbar wrapper">
         <div className="navbar-left flex">
@@ -25,9 +34,7 @@ const Navbar = () => {
         <div className="navbar-right flex">
           <DarkmodeToggle />
           <SigninButton />
-          <BurgerButton />
-
-          <input type="checkbox" id="burger-toggle" className="visually-hidden" aria-label="Toggle open main menu" /> {/* Temp */}
+          <BurgerButton toggleBurger={toggleBurger} /> {/* <!-- Hidden in desktop --> */}
         </div>
       </div>
       

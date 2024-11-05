@@ -1,0 +1,12 @@
+[data-burger-open="true"] {
+  backdrop-filter: blur(20px);
+  background-color: var(--color-bg);
+  .burger-menu-open {
+    display: none;
+  }
+  .burger-menu-close {display: block;}
+  .burger-menu {
+    grid-template-rows: 1fr;
+    box-shadow: 0 25px 15px var(--color-bg);
+  }
+}
