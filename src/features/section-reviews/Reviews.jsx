@@ -1,43 +1,42 @@
+import { useState, useEffect } from "react"
+import Review from "./components/Review"
+
 const Reviews = () => {
+
+  const [reviewsData, setReviewsData] = useState([])
+
+  const fetchReviews = async () => {
+    try {
+      const res = await fetch('https://win24-assignment.azurewebsites.net/api/testimonials');
+      if (!res.ok) throw new Error("Response not OK");
+      
+      const data = await res.json();
+      setReviewsData(data)
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
+  useEffect(() => {
+    fetchReviews()
+  }, [])
+
   return (
     <section id="reviews">
       {/* <!-- Only in desktop --> */}
       <div className="reviews-container wrapper">
         <h2>Clients are<br />Loving Our App</h2>
+        { reviewsData.length > 0 && (
+          <>
+            <div className="review left">
+              <Review key={reviewsData[0].id} author={reviewsData[0].author} jobRole={reviewsData[0].jobRole} starRating={reviewsData[0].starRating} avatarUrl={reviewsData[0].avatarUrl} comment={reviewsData[0].comment} />
+            </div>
+            <div className="review right">
+              <Review key={reviewsData[1].id} author={reviewsData[1].author} jobRole={reviewsData[1].jobRole} starRating={reviewsData[1].starRating} avatarUrl={reviewsData[1].avatarUrl} comment={reviewsData[1].comment} />
+            </div>
+          </>
+        )}
 
-          <div className="review left">
-            <img className="img-quote-icon" src="/icons/quote-icon.svg" alt="" />
-            <blockquote>
-              <img src="/icons/rating-4of5.svg" alt="4 out of 5 stars" />
-              <p>Sit pretium aliquam tempor, orci dolor sed maecenas rutrum sagittis. Laoreet posuere rhoncus, egestas lacus, egestas justo aliquam vel. Nisi vitae lectus hac hendrerit. Montes justo turpis sit amet.</p>
-            </blockquote>
-            <footer className="author">
-              <div className="author-img">
-                <img src="/images/desktop/review-author-female.png" alt="Picture of Fannie" />
-              </div>
-              <div className="author-details">
-                <p className="author-name">Fannie Summers</p>
-                <p className="author-role">Designer</p>
-              </div>
-            </footer>
-          </div>
-
-          <div className="review right">
-            <img className="img-quote-icon" src="/icons/quote-icon.svg" alt="" />
-            <blockquote>
-              <img src="/icons/rating-5of5.svg" alt="5 out of 5 stars" />
-              <p>Nunc senectus leo vel venenatis accumsan vestibulum sollicitudin amet porttitor. Nisl bibendum nulla tincidunt eu enim ornare dictumst sit amet. Dictum pretium dolor tincidunt egestas eget nunc.</p>
-            </blockquote>
-            <footer className="author">
-              <div className="author-img">
-                <img src="/images/desktop/review-author-male.png" alt="Picture of Albert" />
-              </div>
-              <div className="author-details">
-                <p className="author-name">Albert Flores</p>
-                <p className="author-role">Developer</p>
-              </div>
-            </footer>
-          </div>
         </div>
     </section>
   )

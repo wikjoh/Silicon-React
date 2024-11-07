@@ -20,9 +20,7 @@ const FAQ = () => {
   useEffect(() => {
     fetchData()
   }, [])
-  
 
-  console.log(faqItems)
 
   return (
     <div className="faq-accordion">
