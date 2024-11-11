@@ -39,7 +39,7 @@ const Navbar = () => {
         </div>
       </div>
       
-      <BurgerMenu /> {/* <!-- Hidden in desktop --> */}
+      <BurgerMenu toggleBurger={toggleBurger} /> {/* <!-- Hidden in desktop --> */}
     </header>
   )
 }

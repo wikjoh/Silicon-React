@@ -1,21 +1,21 @@
 import { Link, NavLink } from "react-router-dom"
 
-const BurgerMenu = () => {
+const BurgerMenu = ({ toggleBurger }) => {
   return (
     <div id="burger-menu" className="burger-menu">
       <nav className="burger-nav hide-aria" aria-hidden="true">
         <ul>
           <li>
-            <a className="btn-primary btn-signin" href="#" tabIndex="-1">
+            <Link to="#" onClick={toggleBurger} className="btn-primary btn-signin" tabIndex="-1">
               <img className="usericon" src="/icons/signupbuttonusericon.svg" alt="" />
               <span>Sign in / up</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <NavLink to="/" className="navbar-link" tabIndex="-1">Features</NavLink>
+            <NavLink onClick={toggleBurger} to="/" className="navbar-link" tabIndex="-1">Features</NavLink>
           </li>
           <li>
-            <NavLink to="/Contact" className="navbar-link" tabIndex="-1">Contact</NavLink>
+            <NavLink onClick={toggleBurger} to="/Contact" className="navbar-link" tabIndex="-1">Contact</NavLink>
           </li>
         </ul>
       </nav>
@@ -28,10 +28,10 @@ const BurgerMenu = () => {
             </Link>
           </li>
           <li>
-            <NavLink to="/" className="navbar-link" href="#">Features</NavLink>
+            <NavLink onClick={toggleBurger} to="/" className="navbar-link" href="#">Features</NavLink>
           </li>
           <li>
-            <NavLink to="/Contact" className="navbar-link" href="#">Contact</NavLink>
+            <NavLink onClick={toggleBurger} to="/Contact" className="navbar-link" href="#">Contact</NavLink>
           </li>
         </ul>
       </nav>
