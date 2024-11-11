@@ -1,0 +1,28 @@
+.breadcrumbDiv {
+  display: flex;
+  align-items: center;
+
+  font-size: var(--fs-body-s);
+  line-height: 1.6;
+
+  a {
+    color: var(--color-paragraph);
+    opacity: .6;
+  }
+  
+  img {
+    vertical-align: sub;
+  }
+}
+
+.chevron {
+  margin-inline: .75rem;
+}
+
+.homeIcon {
+  margin-right: .25rem;
+}
+
+.pathText {
+  color: var(--color-primary);
+}
