@@ -4,6 +4,7 @@ import BurgerButton from "./components/BurgerButton"
 import BurgerMenu from "./components/BurgerMenu"
 import { useState } from "react"
 import './Navbar.css'
+import { Link, NavLink } from "react-router-dom"
 
 const Navbar = () => {
 
@@ -19,14 +20,14 @@ const Navbar = () => {
       <a href="#main-content" className="jump-to-main">Jump to main content</a>
       <div className="main-navbar wrapper">
         <div className="navbar-left flex">
-          <a className="logo" href="/" aria-current="page">
+          <Link to="/" className="logo" aria-current="page">
             <img className="logo-img" src="/images/logo-bglight.svg" alt="Silicon Logotype" />
-          </a>
+          </Link>
           
           <nav id="navbar-links" className="navbar-links">
             <ul>
-              <li><a className="navbar-link" href="#">Features</a></li>
-              <li><a className="navbar-link" href="#">Contact</a></li>
+              <li><NavLink to="/" className="navbar-link">Features</NavLink></li>
+              <li><NavLink to="/Contact" className="navbar-link">Contact</NavLink></li>
             </ul>
           </nav>
         </div>

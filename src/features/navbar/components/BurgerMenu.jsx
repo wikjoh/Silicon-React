@@ -1,3 +1,5 @@
+import { Link, NavLink } from "react-router-dom"
+
 const BurgerMenu = () => {
   return (
     <div id="burger-menu" className="burger-menu">
@@ -10,20 +12,26 @@ const BurgerMenu = () => {
             </a>
           </li>
           <li>
-            <a className="navbar-link" href="#" tabIndex="-1">Features</a>
+            <NavLink to="/" className="navbar-link" tabIndex="-1">Features</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Contact" className="navbar-link" tabIndex="-1">Contact</NavLink>
           </li>
         </ul>
       </nav>
       <nav className="burger-nav reveal-aria">
         <ul>
           <li>
-            <a className="btn-primary btn-signin" href="#">
+            <Link to="#" className="btn-primary btn-signin">
               <img className="usericon" src="/icons/signupbuttonusericon.svg" alt="" />
               <span>Sign in / up</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="navbar-link" href="#">Features</a>
+            <NavLink to="/" className="navbar-link" href="#">Features</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Contact" className="navbar-link" href="#">Contact</NavLink>
           </li>
         </ul>
       </nav>
