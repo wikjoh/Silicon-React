@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.containerLeft {
+  width: 90px;
+}
+
+.iconImgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 60px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.text {
+  margin-top: 1rem;
+}
+
+.url {
+  display: block;
+  margin-top: 1.5rem;
+  font-weight: var(--fw-semi);
+}

@@ -1,0 +1,13 @@
+.container {
+  margin-top: 1.5rem;
+  display: grid;
+
+}
+
+.emailCard {
+  margin-top: 2rem;
+}
+
+.careersCard {
+  margin-top: 2rem;
+}

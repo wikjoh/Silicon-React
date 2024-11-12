@@ -14,7 +14,7 @@ const Payment = () => {
             </ul>
 
             <a className="btn-learn-more btn-primary" href="#">
-              <span>Learn more <FontAwesomeIcon icon="fa-arrow-right" /> </span>
+              <span>Learn more <FontAwesomeIcon icon="fa-arrow-right" style={{ marginLeft: ".75rem"}} /> </span>
             </a>
           </div>
 
@@ -47,7 +47,7 @@ const Payment = () => {
             </div>
 
             <a className="btn-learn-more btn-primary" href="#">
-              <span>Learn more <FontAwesomeIcon icon="fa-arrow-right" /> </span>
+              <span>Learn more <FontAwesomeIcon icon="fa-arrow-right" style={{ marginLeft: ".75rem"}} /> </span>
             </a>
           </div>
       </div>

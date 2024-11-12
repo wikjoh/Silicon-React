@@ -6,10 +6,12 @@ import styles from './Contact.module.css'
 const Contact = () => {
 
   return (
-    <section className="Contact">
+    <section style={{ backgroundColor: "var(--color-how-bg)" }}>
       <div className={`wrapper ${styles.contactContainer}`}>
         <Breadcrumb />
-        <SectionContact />
+        <main>
+          <SectionContact />
+        </main>
       </div>
     </section>
   )
