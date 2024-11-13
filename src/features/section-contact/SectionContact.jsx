@@ -1,3 +1,4 @@
+import ConsultationForm from './components/consultationform/ConsultationForm'
 import ContactCard from './components/contactcard/ContactCard'
 import styles from './SectionContact.module.css'
 
@@ -23,6 +24,11 @@ const Contact = () => {
           icon='/icons/careeraddicon.svg'
           />
       </div>
+
+      <div className="consultForm" style={{marginTop: "4rem", marginBottom: "4rem"}}>
+        <ConsultationForm/>
+      </div>
+
     </div>
   )
 }
