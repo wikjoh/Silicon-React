@@ -46,7 +46,7 @@ const ConsultationForm = () => {
   if (submitSuccess) {
     return (
       <div className={styles.formWrapper}>
-        <div className="successMessage">
+        <div className={styles.successMessage}>
           <h2>Thank you for contacting us</h2>
           <p>We'll get back to you as soon as possible</p>
         </div>
