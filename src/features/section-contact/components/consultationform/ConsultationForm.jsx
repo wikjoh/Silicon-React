@@ -1,11 +1,16 @@
 import { useState } from 'react'
 import styles from './ConsultationForm.module.css'
+import Button from '../../../../components/button/Button'
 
 const ConsultationForm = () => {
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [specialist, setSpecialist] = useState('')
+
+  const handleSubmit = () => {
+    console.log('test');
+  }
 
   return (
     <div className={styles.formWrapper}>
@@ -26,6 +31,14 @@ const ConsultationForm = () => {
           <option value="marketing">Marketing</option>
         </select>
 
+        <div className={styles.submitButton}>
+          <Button
+            buttonText='Make an appointment'
+            textColor='var(--color-white)'
+            bgColor='var(--color-primary)'
+            onClick={ handleSubmit }
+          />
+        </div>
       </form>
     </div>
   )

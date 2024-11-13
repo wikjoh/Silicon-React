@@ -1,0 +1,17 @@
+.button {
+  border-radius: 8px;
+  border: none;
+  padding: 11px 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition-default);
+  
+  &:hover {
+    @media (hover: hover) {
+      background-color: var(--color-gray-600) !important;
+      color: var(--color-white);
+      text-decoration: none;
+    }
+  }
+}
