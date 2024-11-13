@@ -21,14 +21,14 @@
 .form {
   display: flex;
   flex-direction: column;
-
+  
   label {
     color: var(--color-heading);
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     font-weight: var(--fw-semi);
     line-height: 2;
   }
-
+  
   input, select {
     height: 3rem;
     border-radius: 8px;
@@ -40,8 +40,20 @@
 
 .submitButton {
   margin-top: 4rem;
-
+  
   button {
     width: 100%;
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  span {
+    color: firebrick;
+    position: absolute;
+    bottom: -25px;
   }
 }

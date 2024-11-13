@@ -43,6 +43,9 @@ const ConsultationForm = () => {
     }
   }
 
+  const formDataValid = () => {
+
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -88,19 +91,28 @@ const ConsultationForm = () => {
         <h2>Get Online Consultation</h2>
 
         <form onSubmit={handleSubmit} className={styles.form}>
-          <label>Full name</label>
-          <input name='fullName' type="text" value={formData.name} onChange={handleChange} />
+          <div className={styles.formGroup}>
+            <label>Full name</label>
+            <input name='fullName' type="text" value={formData.name} onChange={handleChange} />
+            {formErrors.fullName && <span>{formErrors.fullName}</span>}
+          </div>
 
-          <label>Email address</label>
-          <input name='email' type="text" value={formData.email} onChange={handleChange} />
+          <div className={styles.formGroup}>
+            <label>Email address</label>
+            <input name='email' type="text" value={formData.email} onChange={handleChange} />
+            {formErrors.email && <span>{formErrors.email}</span>}
+          </div>
 
-          <label>Specialist</label>
-          <select required name='specialist' value={formData.specialist} onChange={handleChange}>
-            <option value="" disabled hidden></option>
-            <option value="technician">Tech support</option>
-            <option value="financials">Financials</option>
-            <option value="marketing">Marketing</option>
-          </select>
+          <div className={styles.formGroup}>
+            <label>Specialist</label>
+            <select required name='specialist' value={formData.specialist} onChange={handleChange}>
+              <option value="" disabled hidden></option>
+              <option value="technician">Tech support</option>
+              <option value="financials">Financials</option>
+              <option value="marketing">Marketing</option>
+            </select>
+            {formErrors.specialist && <span>{formErrors.specialist}</span>}
+          </div>
 
           <div className={styles.submitButton}>
             <Button
