@@ -4,43 +4,84 @@ import Button from '../../../../components/button/Button'
 
 const ConsultationForm = () => {
 
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [specialist, setSpecialist] = useState('')
+  const [formData, setFormData] = useState({ fullName: '', email: '', specialist: ''})
+  const [submitSuccess, setSubmitSuccess] = useState(false)
+  const [fetchError, setFetchError] = useState(false)
 
-  const handleSubmit = () => {
-    console.log('test');
+  const handleChange = (e) => {
+    const fieldName = e.target.name
+    const { value } = e.target
+    setFormData({...formData, [fieldName]: value})
   }
 
-  return (
-    <div className={styles.formWrapper}>
-      <h2>Get Online Consultation</h2>
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    postData(formData)
+  }
 
-      <form className={styles.form}>
-        <label>Full name</label>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+  const postData = async (data) => {
+    try {
+      const res = await fetch('https://win24-assignment.azurewebsites.net/api/forms/contact', {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
 
-        <label>Email address</label>
-        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+      console.log(res)
 
-        <label>Specialist</label>
-        <select name="specialist" value={specialist} onChange={(e) => setSpecialist(e.target.value)}>
-          <option value="" disabled hidden></option>
-          <option value="technician">Tech support</option>
-          <option value="financials">Financials</option>
-          <option value="marketing">Marketing</option>
-        </select>
+      if (!res.ok) {
+        setFetchError(true)
+        throw new Error("Response not OK");
+      } else {
+        setSubmitSuccess(true)
+      }
 
-        <div className={styles.submitButton}>
-          <Button
-            buttonText='Make an appointment'
-            textColor='var(--color-white)'
-            bgColor='var(--color-primary)'
-            onClick={ handleSubmit }
-          />
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
+
+  
+  if (submitSuccess) {
+    return (
+      <div className={styles.formWrapper}>
+        <div className="successMessage">
+          <h2>Thank you for contacting us</h2>
+          <p>We'll get back to you as soon as possible</p>
         </div>
-      </form>
-    </div>
-  )
+      </div>
+    )
+  } else {
+      return (
+        <div className={styles.formWrapper}>
+        <h2>Get Online Consultation</h2>
+
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <label>Full name</label>
+          <input name='fullName' type="text" value={formData.name} onChange={handleChange} />
+
+          <label>Email address</label>
+          <input name='email' type="text" value={formData.email} onChange={handleChange} />
+
+          <label>Specialist</label>
+          <select name='specialist' value={formData.specialist} onChange={handleChange}>
+            <option value="" disabled hidden></option>
+            <option value="technician">Tech support</option>
+            <option value="financials">Financials</option>
+            <option value="marketing">Marketing</option>
+          </select>
+
+          <div className={styles.submitButton}>
+            <Button
+              buttonText='Make an appointment'
+              textColor='var(--color-white)'
+              bgColor='var(--color-primary)'
+              />
+          </div>
+        </form>
+      </div>
+    )
+  }
 }
 export default ConsultationForm
