@@ -13,10 +13,10 @@ const ConsultationForm = () => {
 
       <form className={styles.form}>
         <label>Full name</label>
-        <input type="text" />
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
 
         <label>Email address</label>
-        <input type="text" />
+        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
 
         <label>Specialist</label>
         <select name="specialist" value={specialist} onChange={(e) => setSpecialist(e.target.value)}>
