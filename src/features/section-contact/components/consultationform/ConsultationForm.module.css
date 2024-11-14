@@ -1,5 +1,4 @@
 .formWrapper {
-  height: 620px;
   background-color: var(--color-bg);
   padding: 5rem 4rem;
   border-radius: 8px;
@@ -7,6 +6,7 @@
 
   h2 {
     color: var(--color-heading);
+    margin-bottom: 3rem;
   }
 
   .feedback {
@@ -24,7 +24,6 @@
   
   label {
     color: var(--color-heading);
-    margin-top: 2.5rem;
     font-weight: var(--fw-semi);
     line-height: 2;
   }
@@ -39,7 +38,7 @@
 }
 
 .submitButton {
-  margin-top: 4rem;
+  margin-top: 2rem;
   
   button {
     width: 100%;
@@ -51,9 +50,10 @@
   flex-direction: column;
   position: relative;
 
+
   span {
+    margin-top: .25rem;
+    height: 3rem;
     color: firebrick;
-    position: absolute;
-    bottom: -25px;
   }
 }

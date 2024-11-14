@@ -9,6 +9,10 @@ const ConsultationForm = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false)
   const [fetchError, setFetchError] = useState(false)
 
+  const nameFieldError = 'Needs to be at least 2 characters long'
+  const emailFieldError = 'Required format: mail@example.com'
+  const specialistFieldError = 'Must be selected'
+
   const handleChange = (e) => {
     const fieldName = e.target.name
     const { value } = e.target
@@ -22,21 +26,21 @@ const ConsultationForm = () => {
     switch (fieldName) {
       case 'fullName':
         if (value.trim().length < 2) {
-          setFormErrors(prevFormErrors => ({...prevFormErrors, [fieldName]: 'Needs to be at least 2 characters long'}))
+          setFormErrors(prevFormErrors => ({...prevFormErrors, [fieldName]: nameFieldError}))
         } else {
           removeFormError()
         }
       break;
       case 'email':
         if (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(value) === false) {
-          setFormErrors(prevFormErrors => ({...prevFormErrors, [fieldName]: 'Needs to be in the format of mail@example.com'}))
+          setFormErrors(prevFormErrors => ({...prevFormErrors, [fieldName]: emailFieldError}))
         } else {
           removeFormError()
         }
       break;
       case 'specialist':
         if (value === '') {
-          setFormErrors(prevFormErrors => ({...prevFormErrors, [fieldName]: 'Must be selected'}))
+          setFormErrors(prevFormErrors => ({...prevFormErrors, [fieldName]: specialistFieldError}))
         } else {
           removeFormError()
         }
@@ -53,13 +57,13 @@ const ConsultationForm = () => {
       validateInput(key, value)
 
       if (key === 'fullName' && value.trim().length < 2) {
-        submitErrors.fullName = 'Needs to be at least 2 characters long'
+        submitErrors.fullName = nameFieldError
       }
       if (key === 'email' && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(value) === false) {
-        submitErrors.email = 'Not a valid email address'
+        submitErrors.email = emailFieldError
       }
       if (key === 'specialist' && value === '') {
-        submitErrors.specialist = 'Must be selected'
+        submitErrors.specialist = specialistFieldError
       }
     }
 
@@ -110,20 +114,20 @@ const ConsultationForm = () => {
     )
   } else {
       return (
-        <div className={styles.formWrapper}>
+      <div className={styles.formWrapper}>
         <h2>Get Online Consultation</h2>
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.formGroup}>
             <label>Full name</label>
             <input name='fullName' type="text" value={formData.name} onChange={handleChange} />
-            {formErrors.fullName && <span>{formErrors.fullName}</span>}
+            <span>{formErrors.fullName && formErrors.fullName}</span>
           </div>
 
           <div className={styles.formGroup}>
             <label>Email address</label>
             <input name='email' type="text" value={formData.email} onChange={handleChange} />
-            {formErrors.email && <span>{formErrors.email}</span>}
+            <span>{formErrors.email && formErrors.email}</span>
           </div>
 
           <div className={styles.formGroup}>
@@ -134,7 +138,7 @@ const ConsultationForm = () => {
               <option value="financials">Financials</option>
               <option value="marketing">Marketing</option>
             </select>
-            {formErrors.specialist && <span>{formErrors.specialist}</span>}
+            <span>{formErrors.specialist && formErrors.specialist}</span>
           </div>
 
           <div className={styles.submitButton}>
@@ -142,7 +146,7 @@ const ConsultationForm = () => {
               buttonText='Make an appointment'
               textColor='var(--color-white)'
               bgColor='var(--color-primary)'
-              />
+            />
           </div>
         </form>
       </div>
