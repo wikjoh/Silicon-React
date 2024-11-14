@@ -9,7 +9,7 @@
     color: var(--color-heading);
   }
 
-  .successMessage {
+  .feedback {
     text-align: center;
     height: 100%;
     display: flex;
