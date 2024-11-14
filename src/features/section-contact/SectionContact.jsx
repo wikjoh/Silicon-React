@@ -4,7 +4,7 @@ import styles from './SectionContact.module.css'
 
 const Contact = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{transition: "all .5s ease"}}>
       <div className={styles.textContent}>
         <h1>Contact Us</h1>
         <div className={styles.emailCard}>
