@@ -1,7 +1,23 @@
 .container {
-  margin-top: 1.5rem;
+  position: relative;
+  bottom: -150px;
+  margin-top: -7rem;
   display: grid;
+  grid-template-areas:  "textContent"
+                        "form";
 
+  h1 {
+    font-size: var(--fs-h2)
+
+    
+  }
+
+}
+
+.textContent {
+  grid-area: textContent;
+  max-width: 400px;
+  padding-bottom: 4rem;
 }
 
 .emailCard {
@@ -10,4 +26,29 @@
 
 .careersCard {
   margin-top: 2rem;
+}
+
+.consultationForm {
+  max-width: 640px;
+  grid-area: form;
+  padding-bottom: 3rem;
+}
+
+
+@media (width >= 992px) {
+  .container {
+    grid-template-areas:  "textContent form";
+
+    h1 {
+      font-size: var(--fs-h1)
+    }
+  }
+
+  .emailCard {
+    margin-top: 5rem;
+  }
+
+  .careersCard {
+    margin-top: 3rem;
+  }
 }

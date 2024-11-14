@@ -1,12 +1,12 @@
 .formWrapper {
   background-color: var(--color-bg);
-  padding: 5rem 4rem;
+  padding: 5rem 3rem;
   border-radius: 8px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
 
   h2 {
     color: var(--color-heading);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   .feedback {
@@ -53,7 +53,7 @@
 
   span {
     margin-top: .25rem;
-    height: 3rem;
+    height: 2rem;
     color: firebrick;
   }
 }

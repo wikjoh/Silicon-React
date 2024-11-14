@@ -1,10 +1,7 @@
 .container {
   display: flex;
   flex-direction: row;
-}
-
-.containerLeft {
-  width: 90px;
+  gap: 2rem;
 }
 
 .iconImgContainer {
