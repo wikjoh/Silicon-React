@@ -3,3 +3,19 @@
   flex-direction: column;
   width: 100%;
 }
+
+.card1, .card2 {
+  margin-top: 3rem;
+}
+
+
+@media (width >= 992px) {
+  .container {
+    flex-direction: row;
+    gap: 7rem;
+  }
+
+  .card1 {
+    margin-top: 0;
+  }
+}
