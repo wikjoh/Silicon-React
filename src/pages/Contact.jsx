@@ -19,7 +19,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section id="address" style={{ backgroundColor: "white", marginBottom: "5rem" }}>
+      <section id="address" style={{ backgroundColor: "var(--color-how-faqbg)", marginBottom: "5rem" }}>
         <div className={`wrapper ${styles.addressContainer}`}>
             <Address />
         </div>
