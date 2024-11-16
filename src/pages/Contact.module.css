@@ -6,3 +6,7 @@
     transition: var(--transition-theme)
   }
 }
+
+.addressContainer {
+  padding-top: 10rem;
+}

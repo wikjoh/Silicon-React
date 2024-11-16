@@ -1,0 +1,19 @@
+.cardUl {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  li {
+    display: flex;
+    align-items: start;
+  }
+
+  img {
+    margin-right: .5rem;
+  }
+}
+
+.bold {
+  font-weight: var(--fw-bold);
+}
