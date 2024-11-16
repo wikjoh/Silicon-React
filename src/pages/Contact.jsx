@@ -11,17 +11,13 @@ const Contact = () => {
       <section id="contact" style={{ backgroundColor: "var(--color-how-bg)" }}>
         <div className={`wrapper ${styles.contactContainer}`}>
           <Breadcrumb />
-          <main>
             <SectionContact />
-          </main>
         </div>
       </section>
 
       <section id="address" style={{ backgroundColor: "white" }}>
         <div className={`wrapper ${styles.addressContainer}`}>
-          <main>
             <Address />
-          </main>
         </div>
       </section>
     </>
