@@ -1,7 +1,25 @@
 .container {
-  display: flex;
-  flex-direction: column;
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:  "map"
+                        "cards"
+                        "socials";
+}
+
+.mapContainer {
+  grid-area: map;
+}
+
+.cardContainer {
+  grid-area: cards;
+}
+
+.socialsContainer {
+  grid-area: socials;
+  margin-top: 3rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .card1, .card2 {
@@ -11,11 +29,17 @@
 
 @media (width >= 992px) {
   .container {
-    flex-direction: row;
-    gap: 7rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:  "map cards"
+                          "map socials";
+    gap: 5rem;
   }
 
   .card1 {
+    margin-top: 0;
+  }
+
+  .socialsContainer {
     margin-top: 0;
   }
 }
