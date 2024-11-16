@@ -1,4 +1,8 @@
 import Breadcrumb from '../components/breadcrumb/Breadcrumb'
+import FacebookSvg from '../components/dynamic-svgs/socials/FacebookSvg'
+import InstagramSvg from '../components/dynamic-svgs/socials/InstagramSvg'
+import TwitterSvg from '../components/dynamic-svgs/socials/TwitterSvg'
+import YoutubeSvg from '../components/dynamic-svgs/socials/YoutubeSvg'
 import Address from '../features/section-address/Address'
 import SectionContact from '../features/section-contact/SectionContact'
 
