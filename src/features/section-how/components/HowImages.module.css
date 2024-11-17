@@ -1,0 +1,40 @@
+.images {
+  margin-top: 3rem;
+  position: relative;
+  height: 666px;
+  text-align: center;
+
+  img {
+    /* Make center of image line up with center of page */
+    transform: translateX(-50%);
+  }
+}
+
+.imgBgContainer {
+  position: absolute;
+  z-index: 1;
+}
+
+.imgContainer {
+  position: absolute;
+  top: 0;
+  transition: transform 1s ease, opacity .3s;
+
+  &[data-imgorder="1"] {
+    transform: translateX(-450px);
+    z-index: 0;
+    opacity: .4;
+  }
+
+  &[data-imgorder="2"] {
+    transform: translateX(0px);
+    z-index: 2;
+    opacity: 1;
+  }
+
+  &[data-imgorder="3"] {
+    transform: translateX(450px);
+    z-index: 3;
+    opacity: .4;
+  }
+}

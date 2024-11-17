@@ -1,0 +1,15 @@
+.imageDescription {
+  height: 210px;
+  opacity: 0;
+  animation: fade 5s ease-in-out;
+}
+
+
+@keyframes fade {
+  15% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+}
