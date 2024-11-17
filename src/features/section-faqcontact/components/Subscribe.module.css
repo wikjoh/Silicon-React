@@ -19,7 +19,9 @@
 }
 
 .subscribeSuccess {
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
