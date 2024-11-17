@@ -1,13 +1,11 @@
 .images {
+  display: flex;
+  justify-content: center;
   margin-top: 3rem;
   position: relative;
   height: 666px;
   text-align: center;
 
-  img {
-    /* Make center of image line up with center of page */
-    transform: translateX(-50%);
-  }
 }
 
 .imgBgContainer {
