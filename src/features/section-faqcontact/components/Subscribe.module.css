@@ -19,5 +19,7 @@
 }
 
 .subscribeSuccess {
-  color:limegreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

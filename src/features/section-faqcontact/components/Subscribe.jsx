@@ -60,7 +60,14 @@ const Subscribe = () => {
         <h2 className="desktop-text">Subscribe to our newsletter to stay informed about latest updates</h2>
       </div>
       
-      <div className={`email-form ${styles.emailForm}`}>
+      { subscribeSuccess && (
+        <div className={styles.subscribeSuccess}>
+          <h3>Thank you for subscribing to our newsletter!</h3>
+        </div>
+      )}
+
+      { !subscribeSuccess && (
+        <div className={`email-form ${styles.emailForm}`}>
         <form onSubmit={handleSubmit} id="subscribe-email-form" name="subscribe-email-form" noValidate>
           <label htmlFor="email"></label>
           <div className="input-container">
@@ -73,14 +80,12 @@ const Subscribe = () => {
               invalidEmail && <p className={`${styles.error} ${styles.feedbackText}`}>Not a valid email address</p>
             }
             {
-              subscribeSuccess && <p className={`${styles.subscribeSuccess} ${styles.feedbackText}`}>Thank you for subscribing!</p>
-            }
-            {
               subscribePostError && <p className={`${styles.error} ${styles.feedbackText}`}>Something went wrong... Please try again.</p>
             }
           </div>
         </form>
       </div>
+      )}
     </div>
   )
 }
