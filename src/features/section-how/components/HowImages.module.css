@@ -28,7 +28,7 @@
 
   &[data-imgorder="1"] {
     z-index: 0;
-    opacity: .4;
+    opacity: .7;
   }
 
   &[data-imgorder="2"] {
@@ -38,7 +38,7 @@
 
   &[data-imgorder="3"] {
     z-index: 3;
-    opacity: .4;
+    opacity: .8;
   }
 
 
