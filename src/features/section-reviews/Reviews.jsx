@@ -28,12 +28,8 @@ const Reviews = () => {
         <h2>Clients are<br />Loving Our App</h2>
         { reviewsData.length > 0 && (
           <>
-            <div className="review left">
               <Review key={reviewsData[0].id} author={reviewsData[0].author} jobRole={reviewsData[0].jobRole} starRating={reviewsData[0].starRating} avatarUrl={reviewsData[0].avatarUrl} comment={reviewsData[0].comment} />
-            </div>
-            <div className="review right">
               <Review key={reviewsData[1].id} author={reviewsData[1].author} jobRole={reviewsData[1].jobRole} starRating={reviewsData[1].starRating} avatarUrl={reviewsData[1].avatarUrl} comment={reviewsData[1].comment} />
-            </div>
           </>
         )}
 
